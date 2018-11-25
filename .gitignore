@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+/libsodium-*
+*.sqlite
+*.ps1
+sqlite*

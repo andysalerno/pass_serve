@@ -1,0 +1,8 @@
+[package]
+name = "password_server"
+version = "0.1.0"
+authors = ["andy salerno <andysalerno@gmail.com>"]
+
+[dependencies]
+sodiumoxide = "0.1.0"
+rusqlite = "0.15.0"
