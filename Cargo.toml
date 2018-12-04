@@ -2,7 +2,6 @@
 name = "password_server"
 version = "0.1.0"
 authors = ["andy salerno <andysalerno@gmail.com>"]
-build = "build.rs"
 edition = "2018"
 
 [dependencies]

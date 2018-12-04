@@ -19,6 +19,9 @@ fn encrypt() {
 
 #[cfg(test)]
 mod tests {
+    use crate::pass_db;
+    use crate::pass_db::PasswordDb;
+
     #[test]
     fn read_scenario() {
         // decrypt the db file
