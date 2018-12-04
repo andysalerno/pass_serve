@@ -4,3 +4,5 @@
 *.sqlite
 *.ps1
 sqlite*
+*.log
+.DS_Store

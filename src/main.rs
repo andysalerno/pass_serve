@@ -1,6 +1,3 @@
-extern crate rusqlite;
-extern crate sodiumoxide;
-
 mod pass_db;
 
 use sodiumoxide::crypto::secretbox;
@@ -22,9 +19,6 @@ fn encrypt() {
 
 #[cfg(test)]
 mod tests {
-    use pass_db;
-    use pass_db::PasswordDb;
-
     #[test]
     fn read_scenario() {
         // decrypt the db file
