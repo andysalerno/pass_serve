@@ -1,6 +1,3 @@
-mod pass_db;
-mod simple_sql;
-
 use sodiumoxide::crypto::secretbox;
 
 fn main() -> Result<(), Box<std::error::Error>> {
