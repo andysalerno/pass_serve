@@ -1,6 +1,3 @@
-extern crate rusqlite;
-extern crate sodiumoxide;
-
 mod pass_db;
 mod simple_sql;
 
@@ -23,8 +20,8 @@ fn encrypt() {
 
 #[cfg(test)]
 mod tests {
-    use pass_db;
-    use pass_db::PasswordDb;
+    use crate::pass_db;
+    use crate::pass_db::PasswordDb;
 
     #[test]
     fn read_scenario() {

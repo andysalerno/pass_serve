@@ -2,7 +2,8 @@
 name = "password_server"
 version = "0.1.0"
 authors = ["andy salerno <andysalerno@gmail.com>"]
+edition = "2018"
 
 [dependencies]
-sodiumoxide = "0.1.0"
+sodiumoxide = "0.2.0"
 rusqlite = "0.15.0"
