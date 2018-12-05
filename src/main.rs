@@ -2,6 +2,7 @@ extern crate rusqlite;
 extern crate sodiumoxide;
 
 mod pass_db;
+mod simple_sql;
 
 use sodiumoxide::crypto::secretbox;
 

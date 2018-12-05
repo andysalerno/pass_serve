@@ -34,7 +34,17 @@ pub trait PasswordDb {
     fn insert_for_site(&mut self, site: &str, username: &str, password: &str) -> Result<(), ()>;
 }
 
-pub struct SqlitePasswordDb;
+pub struct SqlitePasswordDb {
+    conn: rusqlite::Connection,
+}
+
+impl SqlitePasswordDb {
+    pub fn new() -> Self {
+        let conn = rusqlite::Connection::open("pwdb.sqlite").expect("failed to open connection");
+        let db = SqlitePasswordDb { conn };
+        db
+    }
+}
 
 impl PasswordDb for SqlitePasswordDb {
     fn find_for_site(&self, site: &str) -> String {
@@ -47,7 +57,6 @@ impl PasswordDb for SqlitePasswordDb {
 }
 
 pub struct TestingPasswordDb;
-
 impl PasswordDb for TestingPasswordDb {
     fn find_for_site(&self, site: &str) -> String {
         return "my_pwd_123".to_owned();
