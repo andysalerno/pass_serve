@@ -1,3 +1,5 @@
+mod pass_db;
+
 use sodiumoxide::crypto::secretbox;
 
 fn main() -> Result<(), Box<std::error::Error>> {
@@ -15,16 +17,11 @@ fn encrypt() {
     println!("{}", String::from_utf8(decrypted).unwrap());
 }
 
-mod innerModule {
-    use super::pass_db;
-
-    fn doit() {
-        pass_db::open_db("testing");
-    }
-}
-
 #[cfg(test)]
 mod tests {
+    use crate::pass_db;
+    use crate::pass_db::PasswordDb;
+
     #[test]
     fn read_scenario() {
         // decrypt the db file
@@ -35,7 +32,7 @@ mod tests {
 
         // query the decrypted db for the desired site
         const site: &str = "friendster.com";
-        let password_db = crate::pass_db::open_db(decrypted_path);
+        let password_db = pass_db::open_db(decrypted_path);
         let user_credentials = password_db.find_for_site(site);
     }
 
