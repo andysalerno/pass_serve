@@ -1,3 +1,5 @@
+mod pass_db;
+
 fn testing() -> Result<(), Box<std::error::Error>> {
     let conn = rusqlite::Connection::open("pwdb.sqlite").expect("failed to open connection");
 
